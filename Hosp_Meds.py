@@ -5,11 +5,11 @@ Created on Tue Sep 15 12:00:06 2020
 
 @author: zitachau
 """
-
+#Importing libraries
 import pandas as pd
 import numpy as np
 
-#importing the dataset and defining the csv file as 'df'
+#Importing the dataset and defining the csv file as 'df'
 df = pd.read_csv('/Users/zitachau/Downloads/HAN507/data_meds_ph.csv')
 
 #Seeing how many rows and columns are in the dataset
@@ -41,7 +41,7 @@ drug_details.tolist()
 #Seeing how many unique patients there are
 df.UUID.nunique()
 
-#Looking for missing data
+#Let's look for missing data
 df.isnull().sum()
 
 #Finding the mean number of medications per patient
@@ -54,7 +54,7 @@ df.name.value_counts()
 #Finding the most common route of administration
 df.roa.value_counts()
 
-#Finding the medication that has the 2nd highest prescription refill rate
+#Lets find the medication that has the 2nd highest prescription refill rate
 df.groupby(['refills_rxed','name']).size()
 
 #Finding the mean, median, and mode + quartiles for 'doses_rxed'
@@ -75,11 +75,11 @@ df.refills_rxed.describe()
 #Finding mode/median for 'refills_rxed'
 df["refills_rxed"].mode()
 df["refills_rxed"].median()
+#looks good!
 
 
 
-
-#Importing packages
+#Importing libraries
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
